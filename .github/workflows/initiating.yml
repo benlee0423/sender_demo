@@ -20,4 +20,4 @@ jobs:
         with:
           token: ${{ secrets.AUTH_TOKEN }}
           repository: ${{ matrix.repo }}
-          event-type: my-event
+          event-type: some_event
