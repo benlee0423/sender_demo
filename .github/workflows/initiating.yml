@@ -14,9 +14,9 @@ jobs:
         repo: ['benlee0423/receiver-demo']
     timeout-minutes: 5
     steps:
-      - name: Dispatch to workflows
-        run: |
-            curl -H "Accept: application/vnd.github.everest-preview+json" \
-            -H "Authorization: token ${{ secrets.AUTH_TOKEN }}" \
-            --request POST \
-            --data '{"event_type": "some_event", "client_payload": { "foo": "bar" }}' https://api.github.com/repos/${{ matrix.repo }}/dispatches
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.AUTH_TOKEN }}
+          repository: ${{ matrix.repo }}
+          event-type: my-event
