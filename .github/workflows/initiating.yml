@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        repo: ['benlee0423/receiver-demo']
+        repo: ['benlee0423/receiver_demo']
     timeout-minutes: 5
     steps:
       - name: Repository Dispatch
